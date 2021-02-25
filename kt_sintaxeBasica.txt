@@ -9,8 +9,8 @@ const val DIVIDIR = 3
 
 
 fun main() {
-    val a:Float = 10.toFloat()
-    val b:Float = 2.toFloat()
+    val a:Float? = 10.toFloat()
+    val b:Float? = 2.toFloat()
     var z:Float
     
     z = calculadora(a, b, SOMAR)
@@ -24,9 +24,14 @@ fun subtrai(a:Float, b:Float) = a.minus(b)
 fun multiplica(a:Float, b:Float) = a.times(b)
 fun divide(a:Float, b:Float) = a.div(b)
 
-fun calcula(a:Float, b:Float, operacao:(Float,Float)->Float) = operacao(a,b)
+//fun calcula(a:Float?, b:Float?, operacao:(Float?,Float?)->Float?) = operacao(a,b)
+fun calcula(a:Float?, b:Float?, operacao:(Float,Float)->Float):Float{
+    val aa:Float = a?: 1.toFloat()
+    val bb:Float = b?: 0.toFloat()
+    return operacao(aa, bb)
+}
             
-fun calculadora(a:Float, b:Float, oper:Int):Float{
+fun calculadora(a:Float?, b:Float?, oper:Int):Float{
     val resultado = when(oper){
         SOMAR -> calcula(a,b,::soma)
         SUBTRAIR -> calcula(a,b,::subtrai)
