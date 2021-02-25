@@ -1,0 +1,43 @@
+/**
+ * You can edit, run, and share this code. 
+ * play.kotlinlang.org 
+ */
+const val SOMAR = 0
+const val SUBTRAIR = 1
+const val MULTIPLICAR = 2
+const val DIVIDIR = 3
+
+
+fun main() {
+    //val a:Float? = 10.toFloat()
+    //val b:Float? = 2.0.toFloat()
+    //var oper = 0
+    val a:Int = 10
+    val b:Int = 2
+    var z:Int
+    
+    z = calculadora(a, b, SOMAR)
+    z = calculadora(a, b, SUBTRAIR)
+    z = calculadora(a, b, MULTIPLICAR)
+    z = calculadora(a, b, DIVIDIR)
+}
+
+fun soma(a:Int, b:Int) = a.plus(b)
+fun subtrai(a:Int, b:Int) = a.minus(b)
+fun multiplica(a:Int, b:Int) = a.times(b)
+fun divide(a:Int, b:Int) = a.div(b)
+
+fun calcula(a:Int, b:Int, operacao:(Int,Int)->Int) = operacao(a,b)
+            
+fun calculadora(a:Int, b:Int, oper:Int):Int{
+    val resultado = when(oper){
+        SOMAR -> calcula(a,b,::soma)
+        SUBTRAIR -> calcula(a,b,::subtrai)
+        MULTIPLICAR -> calcula(a,b,::multiplica)
+        DIVIDIR -> calcula(a,b,::divide)
+        else -> 0
+    }
+    println(resultado)
+    return resultado
+}
+
