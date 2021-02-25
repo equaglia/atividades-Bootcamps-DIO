@@ -9,12 +9,9 @@ const val DIVIDIR = 3
 
 
 fun main() {
-    //val a:Float? = 10.toFloat()
-    //val b:Float? = 2.0.toFloat()
-    //var oper = 0
-    val a:Int = 10
-    val b:Int = 2
-    var z:Int
+    val a:Float = 10.toFloat()
+    val b:Float = 2.toFloat()
+    var z:Float
     
     z = calculadora(a, b, SOMAR)
     z = calculadora(a, b, SUBTRAIR)
@@ -22,22 +19,21 @@ fun main() {
     z = calculadora(a, b, DIVIDIR)
 }
 
-fun soma(a:Int, b:Int) = a.plus(b)
-fun subtrai(a:Int, b:Int) = a.minus(b)
-fun multiplica(a:Int, b:Int) = a.times(b)
-fun divide(a:Int, b:Int) = a.div(b)
+fun soma(a:Float, b:Float) = a.plus(b)
+fun subtrai(a:Float, b:Float) = a.minus(b)
+fun multiplica(a:Float, b:Float) = a.times(b)
+fun divide(a:Float, b:Float) = a.div(b)
 
-fun calcula(a:Int, b:Int, operacao:(Int,Int)->Int) = operacao(a,b)
+fun calcula(a:Float, b:Float, operacao:(Float,Float)->Float) = operacao(a,b)
             
-fun calculadora(a:Int, b:Int, oper:Int):Int{
+fun calculadora(a:Float, b:Float, oper:Int):Float{
     val resultado = when(oper){
         SOMAR -> calcula(a,b,::soma)
         SUBTRAIR -> calcula(a,b,::subtrai)
         MULTIPLICAR -> calcula(a,b,::multiplica)
         DIVIDIR -> calcula(a,b,::divide)
-        else -> 0
+        else -> 0.toFloat()
     }
     println(resultado)
     return resultado
 }
-
