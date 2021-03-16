@@ -51,6 +51,42 @@ fun main(args: Array<String>) {
 
 // Solucao
 
+import java.io.EOFException
+import java.lang.NullPointerException
+
+fun main(args: Array<String>) {
+
+    while (true) {
+
+        try {
+
+            val l = readLine()!!.toInt()
+            val v = readLine()!!.split(" ").run {
+                val ww: MutableList<Int> = mutableListOf<Int>()
+                for (i in this) ww.add(i.toInt())
+                ww
+            }
+/*
+            Nível 1: Se a velocidade é menor que 10 cm/h .
+            Nível 2: Se a velocidade é maior ou igual a 10 cm/h e menor que 20 cm/h .
+            Nível 3: Se a velocidade é maior ou igual a 20 cm/h .
+*/
+            when (v.sorted().last()) {
+                in 0..9 -> println(1)
+                in 10..19 -> println(2)
+                else -> println(3)
+            }
+
+        } catch (f : NumberFormatException ) {
+            break
+        } catch (n : NullPointerException) {
+            break
+        } catch (e : EOFException) {
+            break
+        }
+    }
+}
+
 //-------------------------------------------
 
 // 3 / 5 - Primo Rápido
