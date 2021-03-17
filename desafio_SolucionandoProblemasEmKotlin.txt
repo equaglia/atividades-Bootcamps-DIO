@@ -123,56 +123,44 @@ fun main(args: Array<String>) {
 
 // Solucao
 
+import kotlin.math.sqrt
+
 fun main(args: Array<String>) {
     //continue a solução
-    //var numb: Int = 0
-    //try {
-    //  numb = readLine()?.toInt() ?: 0
-    //} catch (e: NumberFormatException) {
-  //    numb = 0
-  //  }
-    //val n = numb
-    val n = readLine()?.toInt() ?: 0
-    var prime: Boolean = false
-    var value:Int = 0
-    //var m = n
-    if (n > 200) m = 200
-    for ( i in 1..m ) {
-      try {
-        value = readLine()?.toInt() ?: 0
-      } catch(e: NumberFormatException) {
-        value = 0
-      }
-      prime = false
-      if (value !is Int) prime = false
-      else if (value <= 0) prime = false
-      //else if ((value <= 0) || (value >= 231)) prime = false // com esta linha testes 4 e 5 nao funcionam
-      else {
-        when (value) {
-            1 -> prime = true
-            2 -> prime = true
-            3 -> prime = true
-            else -> {
-                if (value % 2 == 0) prime = false
-                else {
-                    var divisor:Int = 3
-                    var resto = value % divisor
-                    while ((resto != 0) && (value / divisor > 1)) {
-                        resto = value % divisor
-                        divisor += 2
+    val n = readLine()!!.toInt()
+    var prime = false
+        for (i in 1..n){
+            val value = try {
+                readLine()!!.toLong()
+            } catch (e: Exception) {
+                break
+            }
+            prime = true
+            val raiz = sqrt(value.toFloat())
+        if  (value <= 0L) prime = false
+        else {
+            when (value) {
+                0L -> prime = false
+                1L -> prime = true
+                2L -> prime = true
+                3L -> prime = true
+                else -> {
+                    if (value % 2 == 0L) prime = false
+                    else {
+                        var divisor:Int = 3
+                        var resto = value % divisor
+                        while ((resto != 0L) && (divisor < raiz)) {
+                            resto = value % divisor
+                            divisor += 2
+                        }
+                        if (resto == 0L) prime = false
                     }
-                    if (resto == 0) prime = false
-                    else prime = true
                 }
             }
         }
+        if (prime) println("Prime")
+        else println("Not Prime")
     }
-    if (prime) {
-        println("Prime")
-    } else {
-        println("Not Prime")
-    }
-  }
 }
 
 //-------------------------------------------
