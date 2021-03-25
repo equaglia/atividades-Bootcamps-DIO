@@ -1,0 +1,52 @@
+// 3 / 3 - Bob Conduite
+
+import java.util.Scanner
+
+fun main(    ) {
+
+
+    for (    ) {
+          println(r1 + r2)
+    }
+}
+
+// Solucao
+
+
+//-------------------------------------------
+
+// 2 / 3 - Conversão Simples de Base
+
+fun main(args: Array<String>) {
+	
+	var s : String
+	var n : Int
+	val r = """0x.*""".toRegex()
+	while(true) {
+		
+//escreva sua solução aqui
+
+		}
+	}
+}
+
+// Solucao
+
+
+//-------------------------------------------
+
+// 1 / 3 - O jogo Matemático de Paula
+
+fun main(args: Array<String>) {
+    
+    val N = readLine()!!.toInt()
+    for (i in 1..N) {
+    
+        //escreva sua solução aqui
+        else println(N1 + N2)
+        
+    }
+}
+
+// Solucao
+
