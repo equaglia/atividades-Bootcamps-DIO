@@ -1,7 +1,3 @@
-/**
- * You can edit, run, and share this code. 
- * play.kotlinlang.org 
- */
 const val SOMAR = 0
 const val SUBTRAIR = 1
 const val MULTIPLICAR = 2
@@ -50,9 +46,6 @@ fun calcula(a:Float?, b:Float?, operacao:(Float,Float)->Float):Float?{
         return null
     }
     return operacao(a, b)
-    //val aa:Float = a?: 1.toFloat()
-    //val bb:Float = b?: 0.toFloat()
-    //return operacao(aa, bb)
 }
 
 // Funcao calcula quando a operacao exige parametros tipo Double, ao inves de Float
