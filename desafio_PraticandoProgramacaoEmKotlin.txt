@@ -12,6 +12,20 @@ fun main(    ) {
 
 // Solucao
 
+import java.util.Scanner
+
+fun main(args: Array<String>) {
+
+    val N = readLine()!!.toInt()
+    var r1:Int
+    var r2:Int
+    for (i in 1..N) {
+        val r = readLine()!!.toString()
+        r1 = r.substringBefore(" ").toInt()
+        r2 = r.substringAfter(" ").toInt()
+        println(r1 + r2)
+    }
+}
 
 //-------------------------------------------
 
@@ -32,6 +46,31 @@ fun main(args: Array<String>) {
 
 // Solucao
 
+import java.lang.Character.hashCode
+
+fun main(args: Array<String>) {
+	
+	var s : String
+	var n : Int
+	val r = """0x.*""".toRegex()
+	while(true) {
+        s = readLine()!!.toString()
+        if (s.length > 1) {
+            if (hashCode(s[1].toChar()) == hashCode('x')) println(converterHexaParaDecimal(s))
+            else if (s.toInt() < 0) break
+            else println(converterDecimalParaHexa(s))
+        } else println(converterDecimalParaHexa(s))
+    }
+}
+fun converterHexaParaDecimal(trio: String) : Long {
+    val tirax = trio.substring(2)
+    return tirax.toLong(16)
+}
+
+fun converterDecimalParaHexa(trio: String) : String {
+    val decimal = String.format("%01X", trio.toLong())
+    return "0x$decimal"
+}
 
 //-------------------------------------------
 
@@ -50,3 +89,21 @@ fun main(args: Array<String>) {
 
 // Solucao
 
+import java.lang.Character.hashCode
+
+fun main(args: Array<String>) {
+    
+    val N = readLine()!!.toInt()
+    for (i in 1..N) {
+    
+        //escreva sua solução aqui
+        val trio = readLine()!!.toString()
+        val N1 = trio.substring(0, 1).toInt()
+        val N2 = trio.substring(2,3).toInt()
+        val letra = hashCode(trio[1].toChar())
+        if (N1 == N2) println(N1*N2)
+        else if (letra >= hashCode('A') && letra <= hashCode('Z')) println(N2-N1)
+        else println(N1 + N2)
+        
+    }
+}
