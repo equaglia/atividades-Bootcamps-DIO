@@ -6,31 +6,9 @@ fun main(args: Array<String>) {
     
     for (i in 1..readLine()!!.toInt()) {
         val input = readLine()!!.split(" ").map { it.toInt() }
-        
-
-
-    }
-    println(       ("\n"))
-}
-
-// máximo divisor comum (chamada recursiva)
-fun mdc(n1: Int, n2: Int): Int {
-   
-}
-
-// Solucao
-
-fun main(args: Array<String>) {
-    
-    val lista = mutableListOf<Int>()
-    
-    for (i in 1..readLine()!!.toInt()) {
-        val input = readLine()!!.split(" ").map { it.toInt() }
-        
         val tamanhoDoMonte = mdc(input[0], input[1])
         println(tamanhoDoMonte)
     }
-    println(       ("\n"))
 }
 
 // máximo divisor comum (chamada recursiva)
@@ -44,41 +22,12 @@ fun mdc(n1: Int, n2: Int): Int {
 // 4 / 5 - A Corrida de Tartarugas
 
 import java.io.EOFException
-
-fun main(args: Array<String>) {
-    
-    while (true) {
-    
-        try {
-        
-            val l = readLine()!!.toInt()
-            val v = readLine()!!.split("        ").run {     {      () } }
-            v.sort()
-            when (v.last()) {
-              
-            }
-    
-        } catch (f :  ) {
-            break
-        } catch (n : ) {
-            break
-        } catch (e :) {
-            break
-        }
-    }
-}
-
-// Solucao
-
-import java.io.EOFException
 import java.lang.NullPointerException
 
 fun main(args: Array<String>) {
 
     while (true) {
-
         try {
-
             val l = readLine()!!.toInt()
             val v = readLine()!!.split(" ").run {
                 val ww: MutableList<Int> = mutableListOf<Int>()
@@ -95,7 +44,6 @@ fun main(args: Array<String>) {
                 in 10..19 -> println(2)
                 else -> println(3)
             }
-
         } catch (f : NumberFormatException ) {
             break
         } catch (n : NullPointerException) {
@@ -109,19 +57,6 @@ fun main(args: Array<String>) {
 //-------------------------------------------
 
 // 3 / 5 - Primo Rápido
-
-fun main(args: Array<String>) {
-    //continue a solução
-    val n =
-    
-    for (    ) {
-        
-    
-    }
-    
-}
-
-// Solucao
 
 import kotlin.math.sqrt
 
@@ -173,33 +108,17 @@ import kotlin.math.pow
 
 fun main(args: Array<String>) {
     
-    val raio = 
-    val pi = 
-    val area = 
-    val resultado = BigDecimal(    ).setScale(0, RoundingMode.HALF_EVEN)
-    println("A=     ")
-    
-}
-
-// Solucao
-
-import java.math.BigDecimal
-import java.math.RoundingMode
-import kotlin.math.pow
-
-fun main(args: Array<String>) {
-    
     val raio = readLine()?.toDouble() ?: 0.0
     val pi = (3.14159).toDouble()
     val area = (pi * raio.pow(2))
     val resultado = BigDecimal( area   ).setScale(4, RoundingMode.HALF_EVEN)
     println("A=$resultado")
-    
 }
 
 //-------------------------------------------
 
 // 1 / 5 - Taxa de Imposto de Renda
+
 fun main(args: Array<String>) {
     //continue a solução
     fun Float.format(digits: Int) = "%.${digits}f".format(this).replace(',','.')
